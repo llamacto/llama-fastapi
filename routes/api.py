@@ -1,0 +1,17 @@
+from fastapi import APIRouter
+from modules.auth.api import router as auth_router
+from modules.user.api import router as user_router
+from modules.article.api import router as article_router
+
+# Create API router
+api_router = APIRouter()
+
+# Register all API routes
+api_router.include_router(auth_router, prefix="/auth", tags=["Authentication"])
+api_router.include_router(user_router, prefix="/users", tags=["Users"])
+api_router.include_router(article_router, prefix="/articles", tags=["Articles"])
+
+# Health check route
+@api_router.get("/health", tags=["Health"])
+async def health_check():
+    return {"status": "healthy"}
