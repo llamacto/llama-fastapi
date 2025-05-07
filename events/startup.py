@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app.db.base import Base
-from app.db.session import engine
+from database.base import Base
+from database.session import engine
 
 
 def create_tables():

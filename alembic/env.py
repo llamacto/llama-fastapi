@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 
 from alembic import context
 
-from db.base import Base
+from database.base import Base
 from modules.user.models import User  # Import all models here
 from core.config import settings
 

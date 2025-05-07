@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import Callable
 from sqlalchemy import text
-from db.session import SessionLocal
+from database.session import SessionLocal
 
 def create_start_app_handler(app: FastAPI) -> Callable:
     async def start_app() -> None:
