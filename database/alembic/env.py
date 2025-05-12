@@ -7,8 +7,8 @@ from sqlalchemy.engine import Connection
 from alembic import context
 
 from database.base import Base
-from modules.user.models import User  # Import all models here
-from core.config import settings
+from app.user.models import User  # Import all models here
+from config.config import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

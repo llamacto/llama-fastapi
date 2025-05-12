@@ -3,6 +3,7 @@ from typing import Any, Dict
 from pydantic_settings import BaseSettings
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 
 class ConfigManager:
@@ -10,6 +11,7 @@ class ConfigManager:
     
     def __init__(self):
         self.env_file = self._get_env_file()
+        load_dotenv(self.env_file)
         self.settings = self._load_settings()
 
     def _get_env_file(self) -> str:

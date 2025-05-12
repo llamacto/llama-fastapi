@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from core.security import get_password_hash, verify_password
+from config.security import get_password_hash, verify_password
 from . import models, schemas
 
 

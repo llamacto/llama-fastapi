@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from core.config import settings
+from config.config import settings
 
 def setup_middlewares(app: FastAPI) -> None:
     """Set up all middlewares for the application"""
