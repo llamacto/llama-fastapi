@@ -96,3 +96,43 @@ Once the application is running, you can access:
 ## License
 
 MIT 
+
+## API Specification (Enterprise Mainstream Style)
+
+- All endpoints use the unified prefix: `/v1/xxx`, deployed under the domain `api.xxx.com`
+- Example: `https://api.xxx.com/v1/auth/login`
+- Do not use the `/api` path prefix, keep it clean and simple
+- Recommended endpoint style:
+  - `POST   /v1/auth/login`
+  - `POST   /v1/auth/register`
+  - `GET    /v1/user/profile`
+  - `POST   /v1/article/create`
+  - `GET    /v1/article/list`
+  - `GET    /v1/health`
+
+### Unified Response Structure
+
+All endpoints return the following structure:
+
+```json
+{
+  "code": 200,
+  "msg": "success",
+  "data": { ... }
+}
+```
+- `code`: Business status code, 200 for success, others for errors
+- `msg`: Message description
+- `data`: Business data object
+
+### Error Response Example
+```json
+{
+  "code": 400,
+  "msg": "Email already registered",
+  "data": null
+}
+```
+
+### Version Management
+- For future versions, use `/v2/xxx` directly, no need for `/api` prefix 

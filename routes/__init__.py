@@ -7,4 +7,4 @@ router = APIRouter()
 
 # Include all routers
 router.include_router(web_router)
-router.include_router(api_router, prefix="/api")
+router.include_router(api_router, prefix="/v1")
